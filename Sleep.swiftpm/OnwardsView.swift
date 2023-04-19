@@ -12,10 +12,21 @@ import SwiftUI
 struct OnwardsView: View {
     var body: some View {
         NavigationStack{
-            
-            Text("Before we start let's ask you some questions")
+            VStack{
+                
+                
+                Text("Before we start let's ask you some questions")
+                
+                NavigationLink(destination: QuestionairView()) {
+                    Text("Lets Answer them!!")
+                        .padding()
+                        .buttonBorderShape(.roundedRectangle)
+                }
+
+                
+            }
         }
     }
+    
+    
 }
-
-

@@ -10,7 +10,8 @@ struct ContentView: View {
                 Text("sleep")
                     .font(.largeTitle)
                 
-                
+            Text("are you getting it?")
+                    .font(.subheadline)
                 
                 NavigationLink(destination: OnwardsView()) {
                     Text("Next View!")
