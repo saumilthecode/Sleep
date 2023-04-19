@@ -10,11 +10,11 @@ import SwiftUI
 
 @available(iOS 16.0, *)
 struct QuestionairView: View {
-    @State var age: Int = 0
+    @State var localAge: Int = 0
     @State private var isShowingNext = false
     @State var stepperValue: Int = 0
     @State var showMeTheGoods = false
-    
+    public var age = 0
     //    if showMeTheGoods == true {
     //        withAnimation(){
     //            isShowingNext.toggle()
@@ -23,35 +23,39 @@ struct QuestionairView: View {
     
     
     var body: some View {
+        
         NavigationStack{
             VStack{
                 Form{
                     HStack {
                         Text("How old are you")
-                        TextField("", value: $age, formatter: NumberFormatter())
+                        TextField("", value: $localAge, formatter: NumberFormatter())
                             .frame(width: 50)
                             .padding(.leading)
                         Text("")
-                        Stepper(value: $age, in: 0...100) {
+                        Stepper(value: $localAge, in: 0...100) {
                             EmptyView()
-                            
+
                         }
                         
                         
                     }
                     
-                    NavigationLink(destination: QuestionairView()) {
+                    NavigationLink(destination: StatsView()) {
                         Text("Next View!")
                             .padding()
                             .buttonBorderShape(.roundedRectangle)
+                        
+                    }
 
                 }
-                
+
             }
+            
         }
+        
+        
     }
-    
-}
 }
 
 
